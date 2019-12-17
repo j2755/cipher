@@ -25,8 +25,15 @@ class test_cipher_methods(unittest.TestCase):
                          one_to_one)
         self.assertEqual(cipher.Caesar(alphabet).caesarCipherKey(1),
                          one_ahead)
+
     def test_Encrypt(self):
-    	self.assertEqual(cipher.Caesar('abcz').Encrypt(1),' BCDA')
+        self.assertEqual(cipher.Caesar('abcz').encrypt(1), ' BCDA')
+
+    def test_Decrypt(self):
+
+        encrypted = cipher.Caesar('abc').encrypt(1)
+        self.assertEqual(' ABC', cipher.Caesar('abc').decrypt(encrypted, 1))
+
 
 if __name__ == '__main__':
     unittest.main()

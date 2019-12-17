@@ -60,7 +60,7 @@ class Caesar:
 
     def decrypt(self,encrypted_phrase, offset):
     	key = self.ceasarDecryptKey(offset)
-    	print(key)
+    	
     	fixed_text = encrypted_phrase.upper()
     	phrase_split = fixed_text.split()
     	new_phrase = []
